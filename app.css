@@ -1,0 +1,81 @@
+:root {
+  /* Backgrounds */
+  --color-bg-main: #2b1f1f;      /* Main dark background */
+  --color-bg-key-default: #1f1a1a;  /* Default key background */
+  
+  /* Function Keys */
+  --color-key-function: #f7bfa3;  /* e.g. AC key */
+  --color-key-operator: #f7c7d4;  /* e.g. %, ÷, ×, - , + */
+  --color-key-equal: #ffccdc;     /* = button */
+
+  /* Text */
+  --color-text-light: #fddde8;   /* Numbers and operators */
+  --color-text-dark: #3b2a2a;    /* AC button text */
+}
+body{
+     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:grey;
+    margin-top: 0;
+    height: 100vh;
+}
+
+.Calculator{
+    width: 260px;
+    background:  var(--color-bg-key-default);
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px;
+   
+}
+#display{
+    height: 50px;
+    background-color:var(--color-bg-main);
+    font-size: 24px;
+    text-align: right;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    overflow-x: auto;
+
+}
+.buttons{
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+}
+.clear{
+    background-color: var(--color-key-equal);
+    color: var(--color-bg-main);
+}
+
+.clear:hover{
+    background-color: var(--color-key-equal);
+}
+button{
+    font-size: 20px;
+    border-radius:8px;
+    border: none;
+    color: var(--color-text-light);
+    cursor: pointer;
+    background-color: var(--color-text-dark);
+}
+button:hover{
+    background-color: var(--color-bg-main);
+}
+
+@media(max-width:400px){
+    .Calculator{
+        width: 90%;
+    }
+    #diplay{
+        font-size: 20px;
+    }
+    button{
+        font-size: 18px;
+        padding: 12px;
+    }
+}
